@@ -1,0 +1,11 @@
+@use "./base.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*:default {
+  box-sizing: inherit;
+}
