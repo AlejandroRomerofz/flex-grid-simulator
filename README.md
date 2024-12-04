@@ -1,39 +1,68 @@
-# flex-grid-simulator
+# Flex-Grid Simulator  
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to **Flex-Grid Simulator**, a web application designed to help you experiment, simulate, and master the power of **CSS Flexbox** and **CSS Grid**. With a simple and intuitive interface, you can build and test complex layouts, customize container and item properties, and get instant visual feedback.  
 
-## Recommended IDE Setup
+Additionally, **dark mode** is available for a comfortable user experience in low-light environments.  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Check this app https://flex-grid-simulator.alejandroromerofz.com/**
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Features  
 
-## Customize configuration
+### 🔧 **Comprehensive CSS Tools**  
+- Simulate layouts using **Flexbox** and **Grid** principles.  
+- Customize **container properties** (e.g., display, justify-content, align-items).  
+- Edit properties of **individual items** (e.g., order, alignment, span).  
+- Add, remove, copy, and reorder items effortlessly.  
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 🌙 **Dark Mode**  
+- Switch to **dark mode** for a visually comfortable experience during late hours or in low-light conditions.  
 
-## Project Setup
+---
 
-```sh
-npm install
-```
+## Technologies  
 
-### Compile and Hot-Reload for Development
+**Flex-Grid Simulator** is built with:  
+- **Vue.js** - A progressive JavaScript framework for building user interfaces.  
+- **TypeScript** - Ensuring type safety and better code quality.  
+- **SASS** - For styling and enhanced flexibility with CSS.  
 
-```sh
-npm run dev
-```
+---
 
-### Type-Check, Compile and Minify for Production
+## Usage  
 
-```sh
-npm run build
-```
+1. **Create a Layout**  
+   - Select between **Flexbox** or **Grid**.  
+   - Customize the main container's properties.  
 
-### Lint with [ESLint](https://eslint.org/)
+2. **Add and Edit Items**  
+   - Add as many items as needed.  
+   - Customize each item individually (size, alignment, order).  
 
-```sh
-npm run lint
-```
+3. **Preview and Test**  
+   - Adjust settings to see real-time changes.  
+   - Perfect your layout by toggling between light and dark modes.  
+
+---
+
+## Future Features  
+
+- Export layouts as **CSS code snippets**.  
+- Save and load previously designed layouts.  
+
+---
+
+## Contributing  
+
+Contributions are welcome! If you have ideas for improvement or bug fixes, feel free to submit a pull request.  
+
+---
+
+## License  
+
+This project is licensed under the [MIT License](LICENSE).  
+
+---
+  
+**Happy Simulating!**
