@@ -36,9 +36,8 @@ const style = computed<GridElementStyle>(() => ({
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 4px 4px 2px black;
-  @include background($secondary);
-
   cursor: pointer;
+  @include background($secondary);
   &:hover {
     filter: invert(10%);
   }

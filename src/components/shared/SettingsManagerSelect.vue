@@ -64,10 +64,8 @@ const changeSelect = (selection: string) => {
     right: 0;
     transition: 0.5s;
     pointer-events: none;
-    @include background($primary);
-
     cursor: pointer;
-
+    @include background($primary);
     &.open {
       opacity: 100%;
       top: 0;
