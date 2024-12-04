@@ -12,18 +12,12 @@ import type {
   FlexWrap,
   JustifyContent,
 } from "@/types/FlexStyle";
-import { type SettingsInput } from "../shared/SettingsManager.vue";
+import { type SettingsInput } from "./SettingsManager.vue";
 import { flexStyleSettings } from "@/utils/flexStyleSettings";
 import { flexElementSettings } from "@/utils/flexElementStyleSettings";
 import { SettingsManagerProvider } from "@/providers/SettingsManagerProvider";
 import SharedWorkspace from "../shared/SharedWorkspace.vue";
 import { ElementManagerProvider } from "@/providers/ElementsManagerProvider";
-
-onMounted(() => {
-  for (let i = 0; i < 3; i++) {
-    addElement();
-  }
-});
 
 const workspace = ref<{
   handleElementClick: (index: number) => void;
@@ -41,6 +35,14 @@ const {
   settingsMode,
 } = inject(SettingsManagerProvider)!;
 
+// Start component
+onMounted(() => {
+  for (let i = 0; i < 3; i++) {
+    addElement();
+  }
+});
+
+// Set flex setting and names
 inputSettings.value = cloneDeep(flexStyleSettings);
 elementInputSettings.value = cloneDeep(flexElementSettings);
 
@@ -49,10 +51,12 @@ option2Name.value = "Element";
 
 settingsMode.value = "Flex";
 
+// Set click method from workspace
 const handleElementClick = (index: number) => {
   workspace.value?.handleElementClick(index);
 };
 
+// Set element manager add and reset functions
 const addElement = () => {
   workspace.value?.elements.push(cloneDeep(flexElementSettings));
 };
@@ -74,6 +78,7 @@ const resetWorkspace = () => {
   inputSettings.value = cloneDeep(flexStyleSettings);
 };
 
+//Create flex style from flex settings
 const style = computed<FlexStyle>(() => ({
   gap:
     (inputSettings.value[0].selectValue! as PropertyDimensionsType) == "auto"

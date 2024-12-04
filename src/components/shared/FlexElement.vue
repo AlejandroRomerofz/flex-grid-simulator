@@ -10,6 +10,7 @@ const handleClick = () => {
   emits("click");
 };
 
+// Create style object from props
 const style = computed<FlexElementStyle>(() => ({
   order: props.order,
   flexGrow: props.flexGrow,
@@ -27,7 +28,7 @@ const style = computed<FlexElementStyle>(() => ({
 <template>
   <div
     @click="handleClick"
-    class="flex-element bg-secondary"
+    class="flex-element"
     :class="{ selected: props.selected }"
     :style="style"
   >
@@ -42,11 +43,12 @@ const style = computed<FlexElementStyle>(() => ({
   border-radius: 1rem;
   box-shadow: 4px 4px 2px black;
   cursor: pointer;
+  @include background($secondary);
   &:hover {
     filter: invert(10%);
   }
   &.selected {
-    background-color: rgb(186, 186, 255);
+    @include background($tertiary);
   }
   p {
     pointer-events: none;

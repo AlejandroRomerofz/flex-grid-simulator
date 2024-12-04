@@ -2,7 +2,7 @@
 import type { PropertyDimensionsType } from "@/types/PropertyDimensionsType";
 import { ref, computed, inject, onMounted } from "vue";
 import { cloneDeep } from "lodash";
-import { type SettingsInput } from "../shared/SettingsManager.vue";
+import { type SettingsInput } from "./SettingsManager.vue";
 import { SettingsManagerProvider } from "@/providers/SettingsManagerProvider";
 import SharedWorkspace from "../shared/SharedWorkspace.vue";
 import { gridStyleSettings } from "@/utils/gridStyleSettings";
@@ -10,10 +10,6 @@ import { gridElementStyleSettings } from "@/utils/gridElementStyleSettings";
 import type { GridStyle } from "@/types/GridStyle";
 import GridElement from "../shared/GridElement.vue";
 import { ElementManagerProvider } from "@/providers/ElementsManagerProvider";
-
-onMounted(() => {
-  addElement();
-});
 
 const workspace = ref<{
   handleElementClick: (index: number) => void;
@@ -31,6 +27,12 @@ const {
   settingsMode,
 } = inject(SettingsManagerProvider)!;
 
+// Start component
+onMounted(() => {
+  addElement();
+});
+
+// Set grid setting and names
 inputSettings.value = cloneDeep(gridStyleSettings);
 elementInputSettings.value = cloneDeep(gridElementStyleSettings);
 
@@ -39,10 +41,12 @@ option2Name.value = "Element";
 
 settingsMode.value = "Grid";
 
+// Set click method from workspace
 const handleElementClick = (index: number) => {
   workspace.value?.handleElementClick(index);
 };
 
+// Set element manager add and reset functions
 const addElement = () => {
   workspace.value!.selectedElements = [];
   workspace.value?.elements.push(cloneDeep(gridElementStyleSettings));
@@ -63,6 +67,7 @@ const resetWorkspace = () => {
   inputSettings.value = cloneDeep(gridStyleSettings);
 };
 
+//Create grid style from grid settings
 const style = computed<GridStyle>(() => ({
   gridTemplateColumns: `repeat(${inputSettings.value[0].numberValue!}, 1fr)`,
   gridTemplateRows: `repeat(${inputSettings.value[1].numberValue!}, 1fr)`,

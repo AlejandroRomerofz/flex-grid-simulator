@@ -44,7 +44,7 @@ const handleResetButtonClick = () => {
 </script>
 
 <template>
-  <div class="element-manager bg-secondary">
+  <div class="element-manager">
     <div
       @click="handleAddButtonClick"
       class="em-button add-button"
@@ -82,6 +82,8 @@ const handleResetButtonClick = () => {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @include background($secondary);
+
   .em-button {
     padding: 2rem;
     flex-grow: 1;
@@ -89,6 +91,9 @@ const handleResetButtonClick = () => {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    &:hover {
+      filter: invert(40%);
+    }
     &:not(.disabled) {
       cursor: pointer;
     }

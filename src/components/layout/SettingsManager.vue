@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import SettingsManagerSelect from "./SettingsManagerSelect.vue";
+// CREATE COMPONENT WITH SETTINGS FROM A SettingsInput ARRAY
+
+import SettingsManagerSelect from "../shared/SettingsManagerSelect.vue";
 
 type SettingsManagerProps = {
   settings: SettingsInput[];
@@ -57,7 +59,7 @@ const handleSelectChange = (index: number, selected: string) => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .settings-manager {
   width: 100%;
   height: 100%;
@@ -93,6 +95,7 @@ const handleSelectChange = (index: number, selected: string) => {
     max-width: 100%;
     border: 0;
     text-align: center;
+    @include background($primary);
   }
 }
 </style>

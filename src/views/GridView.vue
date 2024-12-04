@@ -3,7 +3,7 @@ import WorkspaceGrid from "@/components/layout/WorkspaceGrid.vue";
 </script>
 
 <template>
-  <main class="bg-primary flex-view-main">
+  <main class="flex-view-main">
     <WorkspaceGrid></WorkspaceGrid>
   </main>
 </template>

@@ -24,8 +24,7 @@ const handleChange = (selected: 1 | 2) => {
       @click="handleChange(1)"
       class="option"
       :class="{
-        'bg-tertiary': optionSelected == 1,
-        'bg-secondary': optionSelected == 2,
+        selected: optionSelected == 1,
       }"
     >
       <p>{{ props.option1Name }}</p>
@@ -34,8 +33,7 @@ const handleChange = (selected: 1 | 2) => {
       @click="handleChange(2)"
       class="option"
       :class="{
-        'bg-tertiary': optionSelected == 2,
-        'bg-secondary': optionSelected == 1,
+        selected: optionSelected == 2,
       }"
     >
       <p>
@@ -51,10 +49,24 @@ const handleChange = (selected: 1 | 2) => {
   grid-template-columns: repeat(2, 1fr);
   border-radius: 1.5rem;
   overflow: hidden;
+
   .option {
     text-align: center;
     padding: 1rem 2rem;
     flex-basis: 50%;
+    transition: 0.5s;
+    &:not(.selected) {
+      cursor: pointer;
+      @include background($secondary);
+
+      &:hover {
+        @include background($primary);
+      }
+    }
+
+    &.selected {
+      @include background($tertiary);
+    }
     p {
       font-size: 1.3rem;
     }

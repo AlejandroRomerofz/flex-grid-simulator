@@ -24,14 +24,13 @@ const changeSelect = (selection: string) => {
 </script>
 
 <template>
-  <div @click="switchOpen" class="si-select bg-primary">
+  <div @click="switchOpen" class="si-select">
     <p class="si-selected">{{ props.selection }}</p>
-    <div class="sis-selections bg-primary" :class="{ open: open }">
+    <div class="sis-selections" :class="{ open: open }">
       <div
         class="sis-option"
         :class="{
           selected: selection == option,
-          'bg-tertiary': selection == option,
         }"
         v-for="(option, index) in props.options"
         :key="index"
@@ -50,6 +49,8 @@ const changeSelect = (selection: string) => {
 
   .si-selected {
     padding: 0.5rem 1rem;
+    cursor: pointer;
+    @include background($primary);
   }
   .sis-selections {
     position: absolute;
@@ -61,9 +62,12 @@ const changeSelect = (selection: string) => {
     opacity: 0;
     top: -1rem;
     right: 0;
-    animation-duration: 1s;
     transition: 0.5s;
     pointer-events: none;
+    @include background($primary);
+
+    cursor: pointer;
+
     &.open {
       opacity: 100%;
       top: 0;
@@ -72,11 +76,19 @@ const changeSelect = (selection: string) => {
   }
   .sis-option {
     padding: 0.5rem 1rem;
+    &.selected {
+      cursor: auto;
+      @include background($tertiary);
+    }
     &:not(.selected):hover {
       p {
         text-decoration: underline;
       }
     }
+  }
+
+  p {
+    font-size: 1.2rem;
   }
 }
 </style>

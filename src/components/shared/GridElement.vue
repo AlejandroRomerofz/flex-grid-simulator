@@ -10,6 +10,7 @@ const handleClick = () => {
   emits("click");
 };
 
+// Create style object from props
 const style = computed<GridElementStyle>(() => ({
   gridColumnEnd: props.gridColumnEnd,
   gridColumnStart: props.gridColumnStart,
@@ -21,7 +22,7 @@ const style = computed<GridElementStyle>(() => ({
 <template>
   <div
     @click="handleClick"
-    class="grid-element bg-secondary"
+    class="grid-element"
     :class="{ selected: props.selected }"
     :style="style"
   >
@@ -35,18 +36,14 @@ const style = computed<GridElementStyle>(() => ({
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 4px 4px 2px black;
+  @include background($secondary);
+
   cursor: pointer;
   &:hover {
     filter: invert(10%);
   }
   &.selected {
-    background-color: rgb(186, 186, 255);
-  }
-  p {
-    pointer-events: none;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    @include background($tertiary);
   }
 }
 </style>

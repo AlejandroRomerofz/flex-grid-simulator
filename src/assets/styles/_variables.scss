@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Responsive sizes
 
 $tablet: 500px;
@@ -6,22 +8,57 @@ $pc: 1200px;
 
 // Colors
 
-$light-bg-primary: white;
-$light-bg-secondary: rgb(227, 227, 227);
-$light-bg-tertiary: rgb(139, 207, 255);
+$primary: (
+  light-bg: white,
+  dark-bg: rgb(33, 33, 33),
+  light-color: black,
+  dark-color: white,
+);
 
-$light-color-primary: black;
-$light-color-secondary: rgb(33, 33, 33);
-$light-color-tertiary: rgb(0, 0, 0);
+$secondary: (
+  light-bg: rgb(231, 231, 231),
+  dark-bg: rgb(65, 65, 65),
+  light-color: black,
+  dark-color: white,
+);
 
-$dark-bg-primary: rgb(33, 33, 33);
-$dark-bg-secondary: rgb(65, 65, 65);
-$dark-bg-tertiary: rgb(227, 227, 227);
+$tertiary: (
+  light-bg: rgb(139, 207, 255),
+  dark-bg: rgb(71, 82, 205),
+  light-color: black,
+  dark-color: white,
+);
 
-$dark-color-primary: rgb(255, 255, 255);
-$dark-color-secondary: rgb(255, 255, 255);
-$dark-color-tertiary: rgb(227, 227, 227);
+$main-background-color: map.get(
+  $map: $primary,
+  $key: light-bg,
+);
 
+$main-background-pattern: radial-gradient(
+  map.get(
+      $map: $primary,
+      $key: light-color,
+    )
+    1px,
+  $main-background-color 1px
+);
+
+$main-dark-background-color: map.get(
+  $map: $primary,
+  $key: dark-bg,
+);
+
+$main-dark-background-pattern: radial-gradient(
+  map.get(
+      $map: $primary,
+      $key: dark-color,
+    )
+    1px,
+  $main-dark-background-color 1px
+);
+
+//Size
 $header-height: 5rem;
 $mobile-manager-height: 8rem;
 $mobile-settings-manager-height: 20rem;
+$laptop-settings-manager-width: 35rem;

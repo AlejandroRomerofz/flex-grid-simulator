@@ -1,4 +1,4 @@
-import type { SettingsInput } from "@/components/shared/SettingsManager.vue";
+import type { SettingsInput } from "@/components/layout/SettingsManager.vue";
 import type { InjectionKey, Ref } from "vue";
 
 export const SettingsManagerProvider: InjectionKey<{
