@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import WorkspaceGrid from "@/components/layout/WorkspaceGrid.vue";
+</script>
 
 <template>
-  <main></main>
+  <main class="bg-primary flex-view-main">
+    <WorkspaceGrid></WorkspaceGrid>
+  </main>
 </template>
+
+<style lang="scss"></style>

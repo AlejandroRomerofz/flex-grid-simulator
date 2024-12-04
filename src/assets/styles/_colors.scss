@@ -10,6 +10,11 @@
   color: $light-color-secondary;
 }
 
+.bg-tertiary {
+  background-color: $light-bg-tertiary;
+  color: $light-color-tertiary;
+}
+
 .dark {
   .bg-primary {
     background-color: $dark-bg-primary;
@@ -19,5 +24,10 @@
   .bg-secondary {
     background-color: $dark-bg-secondary;
     color: $dark-color-secondary;
+  }
+
+  .bg-tertiary {
+    background-color: $dark-bg-tertiary;
+    color: $dark-color-tertiary;
   }
 }
