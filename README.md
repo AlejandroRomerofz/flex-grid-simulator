@@ -4,7 +4,7 @@ Welcome to **Flex-Grid Simulator**, a web application designed to help you exper
 
 Additionally, **dark mode** is available for a comfortable user experience in low-light environments.  
 
-Check this app https://flex-grid-simulator.alejandroromerofz.com/**
+Check this app **https://flex-grid-simulator.alejandroromerofz.com/**
 
 ---
 
